@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/icon" href="./assets/images/favicon-32x32.png" >
+    <style>
+      *{
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+      }
+      :root{
+        --dark-slate-gray:hsl(234, 29%, 20%);
+        --charcoal-gray:hsl(235, 18%, 26%);
+        --gray:hsl(231, 7%, 60%);
+        --white:hsl(0, 0%, 100%);
+        --tomato:hsl(4, 100%, 67%);
+      }
+      .mobile-img{
+        width: 100%;
+        transition: .5s;
+      }
+      body div h1{
+        margin: 1.5rem 1rem ;
+        color: var(--dark-slate-gray);
+      }
+      body div p{
+        margin: 0.75rem 1rem ;
+      }
+      body div ul{
+        padding: 0 1rem;
+        line-height: 1.75rem;
+        margin: 2rem auto;
+      }
+      body div li{
+        list-style-type: none;
+        background-image: url(./assets/images/icon-list.svg);
+        background-repeat: no-repeat;
+        padding-left: 2.5rem;
+      }
+      body div form{
+        display: flex;
+        flex-direction: column;
+      }
+      form label{
+        margin: 0 1rem;
+        font-size: x-small;
+        font-weight:900;
+      }
+      form input[type="email"],form input[type="submit"], button{
+        padding:1rem;
+        margin: 0.25rem 1rem 1rem 1rem ;
+        border-radius: 0.5rem;
+        border:none;
+        cursor: pointer;
+      }
+      form input[type="email"]{
+        border: 1px solid var(--gray);
+      }
+      form input[type="email"]:focus{
+        border: 1px solid var(--gray);
+        background-color: transparent;
+      }
+      form input[type="submit"], button{
+        background-color: var(--dark-slate-gray);
+        color: var(--white);
+        font-weight: 900;
+        letter-spacing: 0.5px;
+      }
+      .Thanks{
+        height: 100vh;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+      .success img, .success h1, .success p{
+        margin: 1rem;
+      }
+      .success h1{
+        font-size: 2.5rem;
+      }
+      button{
+        position: absolute;
+        bottom: 1rem;
+        width:90%;
+        cursor: pointer;
+      }
+      .none{
+        display: none;
+      }
+      small{
+        position: absolute;
+        right: 5%;
+        font-weight: 900;
+        color: var(--tomato);
+        font-size: x-small;
+      }
+      .desktop-img{
+        display: none;
+      }
+      .attribution { font-size: 11px; text-align: center; }
+      .attribution a { color: hsl(228, 45%, 44%); }
+      @media (min-width:1024px){
+        .mobile-img{
+          display: none;
+        }
+        .desktop-img{
+          display: block;
+        }
+        body{
+          height: 100vh;
+          display: grid;
+          place-items: center;
+          background-color: var(--charcoal-gray);
+        }
+        body .main-container{
+          display: flex;
+          align-items: center;
+          margin:auto;
+          background-color: var(--white);
+          box-shadow: 1px 1px 0 var(--white);
+          border-radius: 2rem;
+          columns: 2;
+        }
+        .main-content{
+          width: 50%;
+          
+        }
+        .main-content> h1{
+          margin-left: 2.5rem;
+          font-size: 2.5rem;
+          font-weight: 900;
+        }
+        .main-content > p{
+          margin-left: 2.5rem;
+        }
+        .main-content > ul{
+          margin-left: 1.5rem;
+          line-height: 2rem;
+        }
+        .main-content > form{
+          margin-left: 1.5rem;
+        }
+        .desktop-img{
+          margin: 1.25rem auto;    
+        }
+        input[type="submit"]:hover{
+          cursor: pointer;
+          background-image: linear-gradient(to right, hotpink, var(--tomato));
+        }
+        input[type="email"]:focus{
+          cursor: pointer;
+          border: 1px solid var(--dark-slate-gray);
+          color: var(--dark-slate-gray);
+          z-index: 1;
+        }
+        .Thanks{
+          background-color: var(--white);
+          display: flex;
+          align-items: center;
+          width: 30%;
+          height: 85%;
+          border-radius: 2.5rem;
+          display: none;
+        }
+        .Thanks > div > p > span{
+          font-weight: 900;
+        }
+        .Thanks >div > h1{
+          font-size: 3rem;
+          font-weight: 900;
+        }
+        .Thanks > div > img{
+          margin-top: 2rem;
+        }
+        .Thanks> div{
+          margin: 0 2rem 7.5rem 2rem;
+        }
+        .Thanks button{
+          width: 85%;
+          margin: 0 2rem 0.5rem 2rem;
+        }
+        .Thanks button:hover{
+          background-image: linear-gradient(to right, hotpink, var(--tomato));
+        }
+        small{
+        position: absolute;
+        right: 51%;
+        font-weight: 900;
+        color: var(--tomato);
+        font-size: x-small;
+      }
+        .none{
+          display: none;
+        }
+    }
+    </style>
+  </head>
+  <body>
+    <section class="main-container">
+      <div class="mobile-img">
+        <img src="./assets/images/illustration-sign-up-mobile.svg" alt="mobile">
+      </div>
+      <div class="main-content">
+        <h1>Stay Updated!</h1>
+        <p>Join 60,000+ product managers receiving monthlty updates on:</p>
+        <ul>
+          <li>Product discovery and building what matters</li>
+          <li>Measuring to ensure updates are a success</li>
+          <li>And much more!</li>
+        </ul>
+         <!-- Sign-up form start -->
+        <form action="" onsubmit="submitForm()" novalidate>
+          <label for="email">Email address</label>
+          <small id="error" class="none">valid email required</small>
+          <input type="email" name="email" placeholder="email@company.com">
+          <input type="submit" value="Subscribe to monthly newsletter">
+        </form>
+        <!-- Sign-up form end -->
+      </div>
+      <div class="desktop-img">
+        <img width="370px" src="./assets/images/illustration-sign-up-desktop.svg" alt="desktop">
+      </div>
+    </section>
+     <!-- Success message start -->
+    <section class="Thanks none">
+      <div class="success">
+        <img src="./assets/images/icon-success.svg" alt="sucess">
+        <h1>Thanks for subscribing!</h1>
+        <p>A confirmation email has been sent to <span id="name"></span>
+        .Please open it and click the button inside to confirm your
+        subscription</p>
+      </div>
+      <button class="" onclick="disMiss()">Dismiss message</button>
+    </section>
+      <!-- Success message end -->
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="#">Innocent</a>.
+      </div>
+  </body>
+  <script>
+
+    //Variables
+    const emailValue = document.querySelector('input[type="email"]');
+    const mainContent = document.querySelector('.main-content');
+    const mainImage = document.querySelector('.mobile-img');
+    const mainDeskImage = document.querySelector('.desktop-img');
+    const successContent = document.querySelector('.Thanks');
+    const buttonDismiss = document.querySelector('button');
+    const nameValue = document.getElementById('name');
+    const smallError = document.getElementById('error');
+
+    //functions
+    //hide the error messages
+
+    function hideError() {
+    if (emailValue.validity.valid) {
+      smallError.classList.add('none');
+    }
+  }
+    function submitForm() {
+      event.preventDefault();
+      if (!emailValue.validity.valueMissing && emailValue.validity.valid) {
+        mainContent.classList.add('none');
+        mainImage.classList.add('none');
+        mainDeskImage.classList.add('none');
+        successContent.classList.remove('none');
+        buttonDismiss.classList.remove('none');
+        nameValue.innerText = emailValue.value;
+
+        //for big screen
+        successContent.style.display = 'block';
+      } else {
+        smallError.classList.remove('none');
+        emailValue.style.border = '2px solid red';
+        emailValue.style.backgroundColor = 'red';
+        emailValue.style.opacity= '.1';
+        emailValue.style.color = 'black'
+      }
+    }
+
+    function disMiss(){
+      event.preventDefault();
+      mainContent.classList.remove('none');
+      mainImage.classList.remove('none');
+      mainDeskImage.classList.remove('none');
+      successContent.classList.add('none');
+      //for big screen
+      successContent.style.display = 'none';
+      emailValue.style.backgroundColor = 'transparent';
+    };
+
+    //Add event listeners
+    emailValue.addEventListener('focus', function () {
+    smallError.classList.add('none');
+  });
+  </script>
+</html>
